@@ -1,0 +1,33 @@
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
+#include "../W13_SI5/HardwareInterfaceAudio.h"
+#include "../W13_SI5/HardwareInterfaceDisplay.h"
+#include "../W13_SI5/HardwareInterfaceRadiator.h"
+#include "../W13_SI5/RadiationDetector.h"
+#include<memory>
+
+
+class MockHIRadiator : public HardwareInterfaceRadiator {
+
+public:
+
+	MOCK_METHOD(int, alphaRadiationReading, (), (override));
+	//MOCK_METHOD(int, betaRadiationReading, (), (override));
+	//MOCK_METHOD(int, gammaRadiationReading, (), (override));
+
+};
+
+//TEST(TestMeasureAlphaRadiation, TestWasTurnOn) {
+//
+//	MockHIRadiator mockObj;
+//	EXPECT_CALL(mockObj,alphaRadiationReading()).Times(2);
+//	RadiationDetector rdObejct(&mockObj);
+//	int alpha = rdObejct.measureAlphaRadiation();
+//}
+
+//TEST(TestMeasureBetaRadiation, TestFirstonSharedPointer) {
+//	MockHIRadiator mockObj;
+//	EXPECT_CALL(mockObj, betaRadiationReading()).Times(2);
+//	RadiationDetector rdObejct(&mockObj);
+//	int beta = rdObejct.measureBetaRadiation();
+//}
